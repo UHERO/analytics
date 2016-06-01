@@ -3,10 +3,46 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+        mkdir: {
+           target: {
+             options: {
+                create: ["release"]
+             },
+          },
+        },
+
+        copy: {
+           release: {
+             files: [
+                {
+                   expand: true, flatten: false,
+                   src: [
+                      "*.html",
+                      "assets/**/*",
+                   ],
+                   dest: "release"
+                },
+             ],
+          },
+        },
+
+        clean: {
+          release: {
+             src: ['release']
+          },
+          stylesheets: {
+             src: ['release/**/*.css']
+          },
+          scripts: {
+             src: ['release/**/*.js']
+          },
+        },
+
         uglify: {
             main: {
                 src: 'assets/js/creative.js',
-                dest: 'assets/js/<%= pkg.name %>.min.js'
+                dest: 'release/assets/js/<%= pkg.name %>.min.js'
             }
         },
         less: {
@@ -15,7 +51,7 @@ module.exports = function(grunt) {
                     paths: ["css"]
                 },
                 files: {
-                    "assets/css/<%= pkg.name %>.css": "assets/less/*less"
+                    "release/assets/css/<%= pkg.name %>.css": "assets/less/*less"
                 }
             },
             minified: {
@@ -24,7 +60,7 @@ module.exports = function(grunt) {
                     cleancss: true
                 },
                 files: {
-                    "assets/css/<%= pkg.name %>.min.css": "assets/less/*less"
+                    "release/assets/css/<%= pkg.name %>.min.css": "assets/less/*less"
                 }
             }
         },
@@ -63,6 +99,9 @@ module.exports = function(grunt) {
     });
 
     // Load the plugins.
+    grunt.loadNpmTasks('grunt-mkdir');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-banner');
@@ -70,5 +109,6 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['uglify', 'less', 'usebanner']);
+    grunt.registerTask('release', ['clean:release', 'mkdir','copy:release', 'uglify', 'less', 'usebanner'])
 
 };
