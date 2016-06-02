@@ -9,7 +9,7 @@ body {
 }
 
 body {
-    .serif-font;
+    .sans-serif-font;
 }
 
 hr {
@@ -41,7 +41,7 @@ h6 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 1.2em;
     line-height: 1.5;
     margin-bottom: 20px;
 }
@@ -77,8 +77,8 @@ aside {
     margin-bottom: 0;
     border-bottom: 1px solid fade(white, 30%);
     text-transform: uppercase;
+    font-size: 1.2em;
     font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: black;
     .navbar-toggle {
         border: none;
         padding: 10px 6px;
@@ -90,13 +90,17 @@ aside {
             background-color: transparent;
             outline: none;
         }
+        .icon-bar {
+           background-color: #319C6A;
+        }
     }
     .navbar-collapse {
       border: none;
    }
     .navbar-brand {
-        color: #777;
+        color: #319C6A;
         font-weight: 700;
+        padding: 10px;
         &:focus {
             outline: none;
         }
@@ -108,7 +112,7 @@ aside {
         }
     }
     a {
-        color: white;
+        //color: white;
     }
     .nav {
         li {
@@ -116,9 +120,9 @@ aside {
                 -webkit-transition: background .3s ease-in-out;
                 -moz-transition: background .3s ease-in-out;
                 transition: background .3s ease-in-out;
-                color: #777;
+                color: #319C6A;
                 &:hover {
-                    color: fade(white, 80%);
+                    color: #CBCBCB;
                     outline: none;
                     background-color: transparent;
                 }
@@ -131,10 +135,11 @@ aside {
             &.active {
                 outline: none;
                 a {
-                    color: #fff;
+                    color: #797979;
                     background-color: fade(white, 30%);
                     &:hover {
-                        color: white;
+                        color: #797979;
+                        background-color: transparent;
                     }
                 }
             }
@@ -150,7 +155,7 @@ aside {
         transition: background .5s ease-in-out,padding .5s ease-in-out;
         &.top-nav-collapse {
             padding: 0;
-            background: black;
+            background: fade(white, 70%);
             border-bottom: 1px solid fade(white, 30%);
         }
     }
@@ -242,9 +247,9 @@ aside {
 header {
     position: relative;
     width: 100%;
-    min-height: 50%;
+    max-height: 50%;
     .background-cover;
-    background-position: center;
+    //background-position: center;
     background-image: url('../img/graph-paper-background.gif');
     background-color: #00293c;
     text-align: center;
@@ -272,6 +277,9 @@ header {
             }
         }
     }
+    img {
+      width: 70%;
+   }
     @media (min-width: 768px) {
         min-height: 50%;
         .header-content {
@@ -557,6 +565,12 @@ header {
 
 .bg-light-gray {
    background-color: #f7f7f7;
+}
+
+.bg-light-blue {
+   background-color: #39BCE3;
+   color: #fff;
+   text-transform: uppercase;
 }
 
 .team-member {
