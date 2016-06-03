@@ -117,9 +117,15 @@ aside {
            height: 100%;
         }
     }
-    a {
-        //color: white;
-    }
+    .navbar-nav {
+      .active {
+         a,
+         a:focus,
+         a:hover {
+            background-color: transparent;
+         }
+      }
+   }
     .nav {
         li {
             a {
@@ -127,25 +133,26 @@ aside {
                 -moz-transition: background .3s ease-in-out;
                 transition: background .3s ease-in-out;
                 color: #319C6A;
+                background-color: transparent;
                 &:hover {
-                    color: #CBCBCB;
+                    color: #797979;
                     outline: none;
-                    background-color: transparent;
+                    //background-color: fade(white, 100%);
                 }
                 &:focus,
                 &:active {
                     outline: none;
-                    background-color: transparent;
+                    //background-color: fade(white, 100%);
                 }
             }
             &.active {
                 outline: none;
                 a {
                     color: #797979;
-                    background-color: fade(white, 30%);
+                    //background-color: fade(white, 100%);
                     &:hover {
                         color: #797979;
-                        background-color: transparent;
+                        //background-color: fade(white, 100%);
                     }
                 }
             }
@@ -175,7 +182,7 @@ aside {
 header {
     position: relative;
     width: 100%;
-    max-height: 50%;
+    max-height: 65%;
     .background-cover;
     //background-position: center;
     background-image: url('../img/graph-paper-background.gif');
@@ -206,17 +213,18 @@ header {
         }
     }
     img {
-      width: 70%;
+      width: 45%;
+      margin-bottom: -5%;
    }
     @media (min-width: 768px) {
-        min-height: 50%;
+        min-height: 65%;
         .header-content {
             position: absolute;
             top: 50%;
             -webkit-transform: translateY(-50%);
             -ms-transform: translateY(-50%);
             transform: translateY(-50%);
-            padding: 0 50px;
+            //padding: 0 50px;
             .header-content-inner {
                 max-width: 1000px;
                 margin-left: auto;
@@ -245,7 +253,7 @@ header {
       max-width: 60%;
       margin: 0 auto;
    }
-    max-width: 400px;
+    //max-width: 400px;
     //margin: 50px auto 0;
     @media (min-width: 992px) {
         margin: 20px auto 0;
