@@ -208,6 +208,11 @@ header img {
     margin-right: auto;
   }
 }
+@media (max-height: 680px) {
+  header {
+    max-height: 75%;
+  }
+}
 .section-heading {
   margin-top: 0;
 }
