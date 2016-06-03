@@ -42,7 +42,7 @@ module.exports = function(grunt) {
         uglify: {
             main: {
                 src: 'assets/js/creative.js',
-                dest: 'release/assets/js/<%= pkg.name %>.min.js'
+                dest: 'assets/js/<%= pkg.name %>.min.js'
             }
         },
         less: {
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
                     paths: ["css"]
                 },
                 files: {
-                    "release/assets/css/<%= pkg.name %>.css": "assets/less/*less"
+                    "assets/css/<%= pkg.name %>.css": "assets/less/*less"
                 }
             },
             minified: {
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
                     cleancss: true
                 },
                 files: {
-                    "release/assets/css/<%= pkg.name %>.min.css": "assets/less/*less"
+                    "assets/css/<%= pkg.name %>.min.css": "assets/less/*less"
                 }
             }
         },
@@ -109,6 +109,6 @@ module.exports = function(grunt) {
 
     // Default task(s).
     grunt.registerTask('default', ['uglify', 'less', 'usebanner']);
-    grunt.registerTask('release', ['clean:release', 'mkdir','copy:release', 'uglify', 'less', 'usebanner'])
+    grunt.registerTask('release', ['clean:release', 'mkdir', 'uglify', 'less', 'usebanner', 'copy:release'])
 
 };
