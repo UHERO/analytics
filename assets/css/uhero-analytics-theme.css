@@ -185,9 +185,14 @@ header img {
   width: 45%;
   margin-bottom: -5%;
 }
+@media (max-height: 430px) {
+  header img {
+    width: 30%;
+  }
+}
 @media (min-width: 768px) {
   header {
-    min-height: 65%;
+    min-height: 45%;
   }
   header .header-content {
     position: absolute;
@@ -513,25 +518,6 @@ footer .right {
   color: black;
   background-color: #fff;
 }
-/* .btn-default {
-    .button-variant(@theme-dark;white;white);
-}
-
-.btn-primary {
-    .button-variant(white;@theme-primary;@theme-primary);
-}
-
-.btn {
-    .sans-serif-font;
-    border: none;
-    border-radius: 300px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.btn-xl {
-    padding: 15px 30px;
-} */
 ::-moz-selection {
   color: white;
   text-shadow: none;

@@ -215,9 +215,13 @@ header {
     img {
       width: 45%;
       margin-bottom: -5%;
+
+      @media (max-height: 430px) {
+         width: 30%;
+      }
    }
     @media (min-width: 768px) {
-        min-height: 65%;
+        min-height: 45%;
         .header-content {
             position: absolute;
             top: 50%;
@@ -450,7 +454,6 @@ header {
 	}
 }
 
-
 .portfolio-box {
     position: relative;
     display: block;
@@ -588,26 +591,6 @@ footer {
     }
 }
 
-// Button Styles
-/* .btn-default {
-    .button-variant(@theme-dark;white;white);
-}
-
-.btn-primary {
-    .button-variant(white;@theme-primary;@theme-primary);
-}
-
-.btn {
-    .sans-serif-font;
-    border: none;
-    border-radius: 300px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.btn-xl {
-    padding: 15px 30px;
-} */
 
 // Extras
 // -- Highlight Color Customization
